@@ -13,7 +13,7 @@ namespace Microsoft.EntityFrameworkCore.Storage.Converters
     public class NumberToBytesConverter<TNumber> : ValueConverter<TNumber, byte[]>
     {
         private static readonly ConverterMappingHints _defaultHints
-            = new ConverterMappingHints(size: GetByteCount(typeof(TNumber)));
+            = new ConverterMappingHints(size: GetByteCount(typeof(TNumber).UnwrapNullableType()));
 
         /// <summary>
         ///     <para>
